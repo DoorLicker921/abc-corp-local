@@ -1,0 +1,60 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    background-color: #e7e7e7;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+h1
+{
+    font-size: 55px;
+    color: #ece2e2;
+    text-align: center;
+
+    padding: 2%;
+
+    border-color: rgb(116, 21, 8);
+    background-color: #161010;
+}
+h2
+{
+    font-size: 35px;
+    padding-left: 2%;
+
+    padding: 5%;
+}
+div
+{
+    width: 100%;
+}
+.announce
+{
+    background-color: #A2A49D;
+    padding: 4%;
+}
+.policies
+{
+    background-color: #D2C1CC;
+    padding: 4%;
+}
+h1
+{
+    text-align: center;
+}
+p
+{
+    font-size: 23px;
+    line-height: 1.5;
+}
+footer
+{
+    margin-top: 12%;
+    text-align: center;
+}
