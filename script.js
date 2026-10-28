@@ -24,6 +24,7 @@ let btn = document.getElementById("click");
 
 const body = document.body;
 const subheadings = document.querySelectorAll("h2");
+const paragraphs = document.querySelectorAll("p");
 
 let colors = ["white", "black", "red", "blue", "gray", "green"];
 let previousNum = -1;
@@ -68,6 +69,9 @@ function clickBtn()
     subheadings.forEach(function(subheading)
     {
         subheading.style.color = textColor;
+    });
+    paragraphs.forEach(function(paragraph){
+        paragraph.style.color = textColor;
     });
     previousNum = num;
 
