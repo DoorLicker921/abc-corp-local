@@ -26,7 +26,7 @@ const body = document.body;
 const subheadings = document.querySelectorAll("h2");
 const paragraphs = document.querySelectorAll("p");
 
-let colors = ["white", "black", "red", "blue", "gray", "green"];
+let colors = ["white", "black", "#8B0000", "blue", "gray", "purple"];
 let previousNum = -1;
 
 function clickBtn()
@@ -50,7 +50,7 @@ function clickBtn()
             case "black":
                 textColor = "white";
                 break;
-            case "red":
+            case "#8B0000":
                 textColor = "yellow";
                 break;
             case "blue":
@@ -59,8 +59,8 @@ function clickBtn()
             case "gray":
                 textColor = "white";
                 break;
-            case "green":
-                textColor = "purple";
+            case "purple":
+                textColor = "#90EE90";
                 break;
             default:
         }
