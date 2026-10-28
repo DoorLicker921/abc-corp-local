@@ -20,3 +20,58 @@ function currDate()
 }
 
 currDate();
+let btn = document.getElementById("click");
+
+const body = document.body;
+const subheadings = document.querySelectorAll("h2");
+
+let colors = ["white", "black", "red", "blue", "gray", "green"];
+let previousNum = -1;
+
+function clickBtn()
+{
+    let num;
+
+    do
+    {
+        num = Math.floor(Math.random() * colors.length);
+    }
+    while (num === previousNum);
+
+    const selectedColor = colors[num];
+    let textColor;
+
+    switch(selectedColor)
+        {
+            case "white":
+                textColor = "black";
+                break;
+            case "black":
+                textColor = "white";
+                break;
+            case "red":
+                textColor = "yellow";
+                break;
+            case "blue":
+                textColor = "gold";
+                break;
+            case "gray":
+                textColor = "white";
+                break;
+            case "green":
+                textColor = "purple";
+                break;
+            default:
+        }
+
+    body.style.backgroundColor = colors[num];
+    subheadings.forEach(function(subheading)
+    {
+        subheading.style.color = textColor;
+    });
+    previousNum = num;
+
+    console.log(colors[num]);
+    console.log("Background: ", selectedColor);
+    console.log("Text: ", textColor);
+}
