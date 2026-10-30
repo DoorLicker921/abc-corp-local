@@ -25,7 +25,7 @@ let btn = document.getElementById("click");
 const body = document.body;
 const subheadings = document.querySelectorAll("h2");
 const paragraphs = document.querySelectorAll("p");
-
+const labels = document.querySelectorAll("label")
 let colors = ["white", "black", "#8B0000", "blue", "gray", "purple"];
 let previousNum = -1;
 
@@ -73,9 +73,22 @@ function clickBtn()
     paragraphs.forEach(function(paragraph){
         paragraph.style.color = textColor;
     });
+    labels.forEach(function(label){
+        label.style.color = textColor;
+    })
     previousNum = num;
 
     console.log(colors[num]);
     console.log("Background: ", selectedColor);
     console.log("Text: ", textColor);
 }
+
+const donationInput = document.getElementById("donate");
+
+donationInput.addEventListener('invalid', function(){
+    this.setCustomValidity('Not enough money!')
+});
+
+donationInput.addEventListener('input', function(){
+    this.setCustomValidity('');
+});

@@ -67,3 +67,15 @@ button
     border: #161010, 100%;
     border-radius: 20px;
 }
+form
+{
+    margin: 5% 0 5% 7%;
+}
+label
+{
+    font-size: 23px;
+}
+input
+{
+    font-size: 23px;
+}
