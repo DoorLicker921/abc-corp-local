@@ -37,9 +37,9 @@
 
             <form action="index.php" method="get">
                 <label for="donate">Daily Donation: $</label>
-                <input type="text" id="donate" placeholder="Donate NOW!" minlength="5" required><br>
+                <input type="text" name="donation" id="donate" placeholder="Donate NOW!" minlength="5" required><br>
                 
-                <input type="submit">
+                <input type="submit" value="DONATE!">
             </form>
             <button onclick="clickBtn()" id="click">Change Colors</button>
 
@@ -50,3 +50,6 @@
             <script src="script.js" defer></script>
         </body>
 </html>
+<?php
+    echo "{$_GET["donation"]}"
+?>

@@ -84,11 +84,13 @@ function clickBtn()
 }
 
 const donationInput = document.getElementById("donate");
-
-donationInput.addEventListener('invalid', function(){
+if (donationInput)
+{
+    donationInput.addEventListener('invalid', function(){
     this.setCustomValidity('Not enough money!')
 });
 
 donationInput.addEventListener('input', function(){
     this.setCustomValidity('');
 });
+}
