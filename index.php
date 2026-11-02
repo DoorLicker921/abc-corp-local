@@ -1,3 +1,7 @@
+<?php
+    include("db.php");
+    /** @var mysqli $conn */
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -35,21 +39,38 @@
                 </div>
             </div>
 
-            <form action="index.php" method="get">
+            <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
                 <label for="donate">Daily Donation: $</label>
-                <input type="text" name="donation" id="donate" placeholder="Donate NOW!" minlength="5" required><br>
+                <input type="number" name="donation" id="donate" placeholder="Donate NOW!" min="10000" step="0.01" required><br>
                 
                 <input type="submit" value="DONATE!">
             </form>
-            <button onclick="clickBtn()" id="click">Change Colors</button>
-
-            <footer>
-                <p>Bonifacio, Keith Daniel E. BSIT - IV</p>
-            </footer>
         
             <script src="script.js" defer></script>
         </body>
 </html>
 <?php
-    echo "{$_GET["donation"]}"
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $amount =  filter_input(INPUT_POST, "donation", FILTER_VALIDATE_FLOAT);  
+    
+        if(empty($amount)) {
+            echo "Shame on you";
+        }
+        else if (($amount) < 10000) {
+            echo "Read Policy (At least 5 digits of your salary)";
+        }
+        else {
+            $sql = "INSERT INTO donations (amount)
+            VALUES ('$amount')";
+            mysqli_query($conn, $sql);
+
+            echo "You have donated \${$amount}";
+        }
+    }
+
+    mysqli_close($conn);
 ?>
+<button onclick="clickBtn()" id="click">Change Colors</button></footer>
+<footer>
+    <p>Bonifacio, Keith Daniel E. BSIT - IV</p>
+</footer>
